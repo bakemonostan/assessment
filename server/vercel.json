@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "server": "sever.js",
+        "use": "@now/node"
+      }
+    ],
+    "routes": [
+      {
+        "server": "/(.*)",
+        "dest": "server.js"
+      }
+    ]
+  }
