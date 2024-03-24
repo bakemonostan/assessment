@@ -1,8 +1,16 @@
-import express from 'express';
-import jwt from 'jsonwebtoken';
-import pool from '../db.js';
-import bcrypt from 'bcrypt';
-import { jwtTokens } from '../utils/jwt-helpers.js';
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const pool = require('../db.js');
+require("dotenv").config();
+const bcrypt = require('bcrypt');
+const { jwtTokens } = require('../utils/jwt-helpers.js');
+
+// import express from 'express';
+// import jwt from 'jsonwebtoken';
+// import pool from '../db.js';
+// require("dotenv").config();
+// import bcrypt from 'bcrypt';
+// import { jwtTokens } from '../utils/jwt-helpers.js';
 
 const router = express.Router();
 
@@ -50,4 +58,4 @@ router.delete('/refresh_token', (req, res) => {
   }
 });
 
-export default router;
+module.exports = router

@@ -1,6 +1,6 @@
-import pg from 'pg';
+const pg = require('pg');
 const { Pool } = pg;
-
+require("dotenv").config();
 let localPoolConfig = {
   user: 'postgres',
   password: 'edialeomo12',
@@ -17,4 +17,5 @@ const poolConfig = process.env.DATABASE_URL ? {
 } : localPoolConfig;
 
 const pool = new Pool(poolConfig);
-export default pool;
+
+module.exports = pool

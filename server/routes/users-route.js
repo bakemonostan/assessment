@@ -1,8 +1,16 @@
-import express from "express";
-import pool from "../db.js";
-import bcrypt from "bcrypt";
-import { authenticateToken } from "../middleware/authorization.js";
-import { jwtTokens } from "../utils/jwt-helpers.js";
+const express = require("express");
+const pool = require("../db.js");
+const bcrypt = require("bcrypt");
+require("dotenv").config();
+const { authenticateToken } = require("../middleware/authorization.js");
+const { jwtTokens } = require("../utils/jwt-helpers.js");
+
+// import express from "express";
+// import pool from "../db.js";
+// import bcrypt from "bcrypt";
+// require("dotenv").config();
+// import { authenticateToken } from "../middleware/authorization.js";
+// import { jwtTokens } from "../utils/jwt-helpers.js";
 
 const usersRoute = express.Router();
 
@@ -41,4 +49,4 @@ usersRoute.delete("/", async (req, res) => {
   }
 });
 
-export default usersRoute;
+module.exports = usersRoute;
