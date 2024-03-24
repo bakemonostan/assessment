@@ -1,5 +1,4 @@
-const pg = require('pg');
-const { Pool } = pg;
+const { Pool } = require('pg');
 require("dotenv").config();
 let localPoolConfig = {
   user: 'postgres',
